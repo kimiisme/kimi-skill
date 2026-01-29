@@ -156,12 +156,15 @@ def get_special_dates(start_date: datetime, end_date: datetime) -> tuple:
     return holidays, makeup_days
 
 
-def add_workdays(start_date: datetime, workdays: int) -> datetime:
+def add_workdays(start_date: datetime, workdays: int, include_start: bool = False) -> datetime:
     """
     从 start_date 开始，计算 workdays 个工作日后的日期
-    从明天开始计算
+    include_start: 是否包含 start_date 本身作为第1个工作日
     """
-    current_date = start_date + timedelta(days=1)  # 从明天开始
+    if include_start:
+        current_date = start_date  # 从当天开始
+    else:
+        current_date = start_date + timedelta(days=1)  # 从明天开始
     count = 0
 
     while count < workdays:
@@ -237,18 +240,20 @@ def main():
             workdays_num = int(sys.argv[1].replace("个工作日", ""))
 
             # 确定开始日期
-            if len(sys.argv) >= 3 and not sys.argv[2].startswith("--"):
+            user_specified_start = len(sys.argv) >= 3 and not sys.argv[2].startswith("--")
+            if user_specified_start:
                 start_date = parse_date(sys.argv[2])
                 detail_flag = len(sys.argv) >= 4 and "--detail" in sys.argv[3:]
             else:
                 start_date = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
                 detail_flag = len(sys.argv) >= 3 and "--detail" in sys.argv[2:]
 
-            # 计算目标日期
-            target_date = add_workdays(start_date, workdays_num)
+            # 计算目标日期：如果用户指定了开始日期，包含开始日期；否则从明天开始
+            target_date = add_workdays(start_date, workdays_num, include_start=user_specified_start)
 
-            # 输出结果
-            print(f"{target_date.strftime('%Y-%m-%d')}")
+            # 输出结果，包含开始日期
+            actual_start = start_date + timedelta(days=1) if not user_specified_start else start_date
+            print(f"从 {actual_start.strftime('%Y-%m-%d')} 起，{workdays_num}个工作日后是 {target_date.strftime('%Y-%m-%d')}")
 
             # 如果需要详细信息，显示经过的节假日和补班
             if detail_flag:
@@ -283,11 +288,12 @@ def main():
         # 计算工作日
         workdays = count_workdays(start_date, target_date)
 
-        # 输出结果
+        # 输出结果，始终显示日期范围
+        actual_start = start_date + timedelta(days=1)  # count_workdays 从明天开始
         if workdays < 0:
-            print(f"从 {start_date.strftime('%Y-%m-%d')} 到 {target_date.strftime('%Y-%m-%d')} 已经过了 {-workdays} 个工作日")
+            print(f"从 {actual_start.strftime('%Y-%m-%d')} 到 {target_date.strftime('%Y-%m-%d')} 已经过了 {-workdays} 个工作日")
         else:
-            print(f"{workdays}")
+            print(f"从 {actual_start.strftime('%Y-%m-%d')} 到 {target_date.strftime('%Y-%m-%d')} 有 {workdays} 个工作日")
 
         # 如果需要详细信息
         if detail_flag:
