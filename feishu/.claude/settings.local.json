@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python scripts/find_bitable_id.py:*)",
+      "Bash(python scripts/create_bitable.py:*)",
+      "Bash(python:*)",
+      "mcp__feishu__bitable_v1_app_create",
+      "mcp__feishu__bitable_v1_appTableRecord_create",
+      "mcp__feishu__bitable_v1_appTableField_list",
+      "mcp__feishu__bitable_v1_appTableRecord_update",
+      "Bash(ls:*)"
+    ]
+  }
+}

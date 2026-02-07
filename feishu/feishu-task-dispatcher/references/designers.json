@@ -1,0 +1,64 @@
+{
+  "members": [
+    {
+      "name": "彭桐",
+      "department": "设计部",
+      "skills": ["UI设计", "UX设计", "Figma"],
+      "specialties": ["B端设计", "移动端设计"],
+      "experience_level": "高级",
+      "tags": ["design", "设计", "ui", "ux", "figma"],
+      "workload": 0,
+      "availability": null
+    },
+    {
+      "name": "王正沛",
+      "department": "设计部",
+      "skills": ["UI设计", "插画", "Photoshop", "Illustrator"],
+      "specialties": ["插画创作", "品牌设计", "视觉设计"],
+      "experience_level": "高级",
+      "tags": ["design", "设计", "ui", "插画"],
+      "workload": 0,
+      "availability": null
+    },
+    {
+      "name": "吴沁怡",
+      "department": "设计部",
+      "skills": ["UI设计", "UX设计", "用户研究", "交互设计"],
+      "specialties": ["用户体验", "交互流程", "设计系统"],
+      "experience_level": "中级",
+      "tags": ["design", "设计", "ux", "用户研究"],
+      "workload": 0,
+      "availability": null
+    },
+    {
+      "name": "郑钦予",
+      "department": "设计部",
+      "skills": ["UI设计", "动效设计", "After Effects", "Principle"],
+      "specialties": ["移动端设计", "交互动效", "UI动画"],
+      "experience_level": "中级",
+      "tags": ["design", "设计", "ui", "动效"],
+      "workload": 0,
+      "availability": null
+    },
+    {
+      "name": "姚佳男",
+      "department": "设计部",
+      "skills": ["UI设计", "网页设计", "HTML/CSS", "响应式设计"],
+      "specialties": ["Web设计", "响应式布局", "前端协作"],
+      "experience_level": "中级",
+      "tags": ["design", "设计", "ui", "web"],
+      "workload": 0,
+      "availability": null
+    },
+    {
+      "name": "赵菲",
+      "department": "设计部",
+      "skills": ["UI设计", "数据可视化", "图表设计", "Dashboard"],
+      "specialties": ["数据可视化", "B端设计", "Dashboard设计"],
+      "experience_level": "高级",
+      "tags": ["design", "设计", "ui", "数据可视化"],
+      "workload": 0,
+      "availability": null
+    }
+  ]
+}

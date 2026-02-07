@@ -1,0 +1,39 @@
+{
+  "members": [
+    {
+      "name": "张三",
+      "department": "Engineering",
+      "skills": ["Python", "Backend", "API Development", "Database"],
+      "tags": ["backend", "后端", "开发", "python"],
+      "workload": 2
+    },
+    {
+      "name": "李四",
+      "department": "Engineering",
+      "skills": ["React", "Frontend", "TypeScript", "UI/UX"],
+      "tags": ["frontend", "前端", "开发", "react"],
+      "workload": 1
+    },
+    {
+      "name": "王五",
+      "department": "Engineering",
+      "skills": ["Python", "React", "Fullstack", "DevOps"],
+      "tags": ["fullstack", "全栈", "backend", "frontend"],
+      "workload": 3
+    },
+    {
+      "name": "赵六",
+      "department": "Design",
+      "skills": ["UI Design", "Figma", "User Research", "Prototyping"],
+      "tags": ["design", "设计", "ui", "ux"],
+      "workload": 0
+    },
+    {
+      "name": "钱七",
+      "department": "Engineering",
+      "skills": ["Java", "Spring", "Microservices", "Backend"],
+      "tags": ["backend", "后端", "java", "微服务"],
+      "workload": 2
+    }
+  ]
+}
